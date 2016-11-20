@@ -46,7 +46,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     
   </div>
   <a href="#portfolio" onclick="w3_close()" class="w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a>
-  <a href="basket_page.jsp" onclick="w3_close()" class="w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>BASKET</a>
+  <a href="#basket" onclick="w3_close()" class="w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>BASKET</a>
   <a href="#contact" onclick="w3_close()" class="w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
   <p class="w3-text-grey"><a href="index.html" name="link">Log out</a></p> 
   <div class="w3-section w3-padding-top w3-large">
@@ -165,7 +165,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/base","root","qwerty");
             
             st=con.prepareStatement("SELECT *FROM AUCTION WHERE IDAUCTION=?");
-            for(int i=1;i<=6;i++){
+            for(int i=1;i<=1;i++){
                 st.setInt(1,i);
                 
                 rs=st.executeQuery();
@@ -205,132 +205,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </ul>
   </div>
 
-  <!-- Images of Me -->
-  <div class="w3-row-padding w3-padding-16" id="about">
-    <div class="w3-col m6">
-      <img src="/w3images/avatar_g.jpg" alt="Me" style="width:100%">
-    </div>
-    <div class="w3-col m6">
-      <img src="/w3images/me2.jpg" alt="Me" style="width:100%">
-    </div>
-  </div>
-
-  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
-    <h4><b>About Me</b></h4>
-    <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-    <hr>
-    
-    <h4>Technical Skills</h4>
-    <!-- Progress bars / Skills -->
-    <p>Photography</p>
-    <div class="w3-progress-container w3-grey">
-      <div class="w3-progressbar w3-dark-grey" style="width:95%"></div>
-    </div>
-    <p>Web Design</p>
-    <div class="w3-progress-container w3-grey">
-      <div class="w3-progressbar w3-dark-grey" style="width:85%"></div>
-    </div>
-    <p>Photoshop</p>
-    <div class="w3-progress-container w3-grey">
-      <div class="w3-progressbar w3-dark-grey" style="width:80%"></div>
-    </div>
-    <p>
-      <button class="w3-btn w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom">
-        <i class="fa fa-download w3-margin-right"></i>Download Resume
-      </button>
-    </p>
-    <hr>
-    
-    <h4>How much I charge</h4>
-    <!-- Pricing Tables -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-third w3-margin-bottom">
-        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
-          <li class="w3-padding-16">Web Design</li>
-          <li class="w3-padding-16">Photography</li>
-          <li class="w3-padding-16">1GB Storage</li>
-          <li class="w3-padding-16">Mail Support</li>
-          <li class="w3-padding-16">
-            <h2>$ 10</h2>
-            <span class="w3-opacity">per month</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-btn w3-teal w3-padding-large w3-hover-black">Sign Up</button>
-          </li>
-        </ul>
-      </div>
-      
-      <div class="w3-third w3-margin-bottom">
-        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-teal w3-xlarge w3-padding-32">Pro</li>
-          <li class="w3-padding-16">Web Design</li>
-          <li class="w3-padding-16">Photography</li>
-          <li class="w3-padding-16">50GB Storage</li>
-          <li class="w3-padding-16">Endless Support</li>
-          <li class="w3-padding-16">
-            <h2>$ 25</h2>
-            <span class="w3-opacity">per month</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-btn w3-teal w3-padding-large w3-hover-black">Sign Up</button>
-          </li>
-        </ul>
-      </div>
-      
-      <div class="w3-third">
-        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
-          <li class="w3-padding-16">Web Design</li>
-          <li class="w3-padding-16">Photography</li>
-          <li class="w3-padding-16">Unlimited Storage</li>
-          <li class="w3-padding-16">Endless Support</li>
-          <li class="w3-padding-16">
-            <h2>$ 25</h2>
-            <span class="w3-opacity">per month</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-btn w3-teal w3-padding-large w3-hover-black">Sign Up</button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Contact Section -->
-  <div class="w3-container w3-padding-large w3-grey">
-    <h4 id="contact"><b>Contact Me</b></h4>
-    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
-      <div class="w3-third w3-dark-grey">
-        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
-        <p>email@email.com</p>
-      </div>
-      <div class="w3-third w3-teal">
-        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
-        <p>Chicago, US</p>
-      </div>
-      <div class="w3-third w3-dark-grey">
-        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
-        <p>512312311</p>
-      </div>
-    </div>
-    <hr class="w3-opacity">
-    <form>
-      <div class="w3-group">
-        <label>Name</label>
-        <input class="w3-input w3-border" type="text">
-      </div>
-      <div class="w3-group">
-        <label>Email</label>
-        <input class="w3-input w3-border" type="text">
-      </div>
-      <div class="w3-group">
-        <label>Subject</label>
-        <input class="w3-input w3-border" type="text">
-      </div>
-      <button type="button" class="w3-btn w3-padding-large w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
-    </form>
-  </div>
 
   <!-- Footer -->
   <footer class="w3-container w3-padding-32 w3-dark-grey">

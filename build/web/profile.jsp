@@ -46,7 +46,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     
   </div>
   <a href="#portfolio" onclick="w3_close()" class="w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a>
-  <a href="#basket" onclick="w3_close()" class="w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>BASKET</a>
+  <a href="basket_page.jsp" onclick="w3_close()" class="w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>BASKET</a>
   <a href="#contact" onclick="w3_close()" class="w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
   <p class="w3-text-grey"><a href="index.html" name="link">Log out</a></p> 
   <div class="w3-section w3-padding-top w3-large">
@@ -104,7 +104,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   </form>
         
         <% 
-            String ALL = request.getParameter("ALL");
+       
             String search = request.getParameter("search");
             request.setAttribute("search", search);
             session.setAttribute("search",search);
@@ -152,7 +152,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 <%
             
-        }else if(ALL!=null){%>
+        }else {%>
         <div class="w3-row-padding">      
     <%        
         Connection con=null;
@@ -175,7 +175,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   <!-- First Photo Grid-->
   
     <div class="w3-third w3-container w3-margin-bottom">
-      <img src="upload_image_auction.jsp"  style="width:100%; height:220px;" class="w3-hover-opacity">
+      
+        <img src="default_page_auction_image.jsp"  style="width:100%; height:220px;" class="w3-hover-opacity">
       <div class="w3-container w3-white">
         <p><b><%out.print(rs.getString("NAME"));%></b></p>
         <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
@@ -187,50 +188,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             
         } catch (Exception ex) {
             ex.printStackTrace();
-        }%>
+        }}%>
 </div>
-<%}%>
+
 
      
-        <%else{
-        %>
-<div class="w3-row-padding">      
-    <%        
-        Connection con=null;
-        String name=null;
-        PreparedStatement st=null;
-        ResultSet rs=null;
-        
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/base","root","qwerty");
-            
-            st=con.prepareStatement("SELECT *FROM AUCTION WHERE IDAUCTION=?");
-            for(int i=1;i<=6;i++){
-                st.setInt(1,i);
-                
-                rs=st.executeQuery();
-                while(rs.next())
-                {
-            %>
-  <!-- First Photo Grid-->
-  
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="upload_image_auction.jsp"  style="width:100%; height:220px;" class="w3-hover-opacity">
-      <div class="w3-container w3-white">
-        <p><b><%out.print(rs.getString("NAME"));%></b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      </div>
-    </div>
-  
-  <%   }        
-        }    
-            
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }%>
-</div>
-<%}%>
   
   <!-- Pagination -->
   <div class="w3-center w3-padding-32">
