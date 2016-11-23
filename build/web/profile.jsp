@@ -41,12 +41,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             out.print(session.getAttribute("User"));
         }else{
             out.print(session.getAttribute(null));
+            
         }
     %></p>
     
   </div>
-  <a href="#portfolio" onclick="w3_close()" class="w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a>
-  <a href="basket_page.jsp" onclick="w3_close()" class="w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>BASKET</a>
+  <a href="profile.jsp" onclick="w3_close()" class="w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>AUCTION</a>
+  <a href="basket_page.jsp" onclick="w3_close()" class="w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>SHOPPING CART</a>
   <a href="#contact" onclick="w3_close()" class="w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
   <p class="w3-text-grey"><a href="index.html" name="link">Log out</a></p> 
   <div class="w3-section w3-padding-top w3-large">
@@ -72,9 +73,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <div class="w3-section w3-bottombar w3-padding-16">
       <span class="w3-margin-right">Filter:</span>
       <button class="w3-btn" name="ALL">ALL</button>
-      <button class="w3-btn w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
-      <button class="w3-btn w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
-      <button class="w3-btn w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
+      <button class="w3-btn w3-white"><i class="fa fa-diamond w3-margin-right"></i>Ascending </button>
+      <button class="w3-btn w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Descending </button>
+      <button class="w3-btn w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Default</button>
     </div>
   </header>
   <style>
@@ -132,14 +133,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                 {
             %>
   <!-- First Photo Grid-->
-  
+  <form action="" method="">
     <div class="w3-third w3-container w3-margin-bottom">
       <img src="upload_image_auction.jsp"  style="width:100%; height:220px;" class="w3-hover-opacity">
       <div class="w3-container w3-white">
-        <p><b><%out.print(rs.getString("NAME"));%></b></p>
+        <p><b><%out.print(rs.getString("NAME")); out.print("   "); out.print(rs.getString("PRICE")+"$");%></b></p>
+        <p><b><%out.print(rs.getString("DATE"));%></b></p>
         <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       </div>
     </div>
+  </form>
   
   <%   }        
             
@@ -173,15 +176,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                 {
             %>
   <!-- First Photo Grid-->
-  
+   <a href="product.jsp">
     <div class="w3-third w3-container w3-margin-bottom">
       
         <img src="default_page_auction_image.jsp"  style="width:100%; height:220px;" class="w3-hover-opacity">
       <div class="w3-container w3-white">
-        <p><b><%out.print(rs.getString("NAME"));%></b></p>
+        <p><b><%out.print(rs.getString("NAME")); out.print("   "); out.print(rs.getString("PRICE")+"$");%></b></p>
+        <p><b><%out.print(rs.getString("DATE"));%></b></p>
+        
         <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       </div>
     </div>
+   </a>
   
   <%   }        
          }    

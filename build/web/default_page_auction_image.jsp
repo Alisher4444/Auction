@@ -37,10 +37,10 @@
                     file = rs.getBlob("image");
                     fileData = file.getBytes(1,(int)file.length());
                   } 
-             response.setContentType("image/jpg");
+                response.setContentType("image/jpg");
                 response.setHeader("Content-Disposition", "inline");
                 response.setContentLength(fileData.length);
-            OutputStream output = response.getOutputStream();
+                OutputStream output = response.getOutputStream();
                 output.write(fileData);
                 
                 output.flush();

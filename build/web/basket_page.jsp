@@ -45,8 +45,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     %></p>
     
   </div>
-  <a href="#portfolio" onclick="w3_close()" class="w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a>
-  <a href="#basket" onclick="w3_close()" class="w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>BASKET</a>
+  <a href=profile.jsp onclick="w3_close()" class="w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>AUCTION</a>
+  <a href="basket_page.jsp" onclick="w3_close()" class="w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>SHOPPING CART</a>
   <a href="#contact" onclick="w3_close()" class="w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
   <p class="w3-text-grey"><a href="index.html" name="link">Log out</a></p> 
   <div class="w3-section w3-padding-top w3-large">

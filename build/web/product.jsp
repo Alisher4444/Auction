@@ -68,14 +68,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   <header class="w3-container" id="portfolio">
     <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-opennav w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-    <h1><b>Online Auction</b></h1>
-    <div class="w3-section w3-bottombar w3-padding-16">
-      <span class="w3-margin-right">Filter:</span>
-      <button class="w3-btn" name="ALL">ALL</button>
-      <button class="w3-btn w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
-      <button class="w3-btn w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
-      <button class="w3-btn w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
-    </div>
+    <h1><b>Product's name</b></h1>
+ 
   </header>
   <style>
             input[type=text] {
@@ -99,111 +93,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             }
 
         </style>
-  <form action="profile.jsp" method="post">
-    <input type="text" name="search" placeholder="Search..">
-  </form>
-        
-        <% 
-       
-            String search = request.getParameter("search");
-            request.setAttribute("search", search);
-            session.setAttribute("search",search);
-            if(search!=null){
-                
-%>
 
-<div class="w3-row-padding">      
-    <%        
-        Connection con=null;
-        String name=null;
-        PreparedStatement st=null;
-        ResultSet rs=null;
-        
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/base","root","qwerty");
-            
-            st=con.prepareStatement("SELECT *FROM AUCTION WHERE NAME=?");
-            
-                st.setString(1,request.getAttribute("search").toString());
-                
-                rs=st.executeQuery();
-                while(rs.next())
-                {
-            %>
-  <!-- First Photo Grid-->
-  
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="upload_image_auction.jsp"  style="width:100%; height:220px;" class="w3-hover-opacity">
-      <div class="w3-container w3-white">
-        <p><b><%out.print(rs.getString("NAME"));%></b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      </div>
-    </div>
-  
-  <%   }        
-            
-            
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }%>
-</div>
-
-
-<%
-            
-        }else {%>
-        <div class="w3-row-padding">      
-    <%        
-        Connection con=null;
-        String name=null;
-        PreparedStatement st=null;
-        ResultSet rs=null;
-        
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/base","root","qwerty");
-            
-            st=con.prepareStatement("SELECT *FROM AUCTION WHERE IDAUCTION=?");
-            for(int i=1;i<=1;i++){
-                st.setInt(1,i);
-                
-                rs=st.executeQuery();
-                while(rs.next())
-                {
-            %>
-  <!-- First Photo Grid-->
-  
-    <div class="w3-third w3-container w3-margin-bottom">
-      
-        <img src="default_page_auction_image.jsp"  style="width:100%; height:220px;" class="w3-hover-opacity">
-      <div class="w3-container w3-white">
-        <p><b><%out.print(rs.getString("NAME"));%></b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      </div>
-    </div>
-  
-  <%   }        
-         }    
-            
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }}%>
-</div>
 
 
      
   
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
-    <ul class="w3-pagination">
-      <li><a class="w3-black" href="#">1</a></li>
-      <li><a class="w3-hover-black" href="#">2</a></li>
-      <li><a class="w3-hover-black" href="#">3</a></li>
-      <li><a class="w3-hover-black" href="#">4</a></li>
-      <li><a class="w3-hover-black" href="#">»</a></li>
-    </ul>
-  </div>
 
 
   <!-- Footer -->
@@ -216,7 +110,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </div>
   
     <div class="w3-third">
-      <h3>BLOG POSTS</h3>
+      <h3>BLOG POSTS</h3>       
       <ul class="w3-ul w3-hoverable">
         <li class="w3-padding-16">
           <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
